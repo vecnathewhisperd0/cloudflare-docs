@@ -39,7 +39,7 @@ To achieve more precise control over which domains are allowed or blocked, the s
 
 To streamline the management of allowed and blocked domains, [lists](/cloudflare-one/policies/gateway/lists/) can be utilized. These lists are easily updated through the dashboard or via [APIs](/api/operations/zero-trust-lists-update-zero-trust-list), making policy adjustments more efficient.
 
-![Figure 3: DNS policies are applied according to their order of precedence. In this example, the “Allow List Policy” and “Block List Policy” will be considered before the “Security List” policy.](~/assets/images/reference-architecture/gateway-dns-for-isp/gateway-dns-for-isp-image-03.svg)
+![Figure 3: DNS policies are applied according to their order of precedence. In this example, the "Allow List Policy" and "Block List Policy" will be considered before the "Security List" policy.](~/assets/images/reference-architecture/gateway-dns-for-isp/gateway-dns-for-isp-image-03.svg)
 
 Additionally, all DNS queries forwarded to Cloudflare Gateway are logged and can be exported to external systems using [Logpush](/cloudflare-one/insights/logs/logpush/).
 
