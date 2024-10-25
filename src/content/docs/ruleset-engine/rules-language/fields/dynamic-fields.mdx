@@ -511,3 +511,67 @@ Identifies whether a request comes from a worker or not. When a request comes fr
 ## Corporate Proxy
 
 <Render file="corporate_proxy" product="bots" />
+
+## JSON Web Tokens Validation claims
+
+[API Shield](/api-shield/) users can now create [Custom Rules](/waf/custom-rules/) using claims present in tokens processed by [JSON Web Tokens Validation](/api-shield/security/jwt-validation/).
+
+### `aud` (audience)
+
+`http.request.jwt.claims.aud` `Map<Array<String>>`
+`http.request.jwt.claims.aud.names` `Array<String>`
+`http.request.jwt.claims.aud.values` `Array<String>`
+
+The `aud` (audience) claim identifies the recipients that the JWT is intended for. Each principal intended to process the JWT must identify itself with a value in the audience claim. In the general case, the `aud` value is an array of case-sensitive strings, each containing a StringOrURI value.
+
+<Render file="jwt-claims" product="api-shield" />
+
+### `iat` (issued at)
+
+`http.request.jwt.claims.iat.sec` `Map<Array<Integer>>`
+`http.request.jwt.claims.iat.sec.names` `Array<String>`
+`http.request.jwt.claims.iat.sec.values` `Array<Integer>`
+
+The `iat` (issued at) claim identifies the time at which the JWT was issued.
+
+<Render file="jwt-claims" product="api-shield" />
+
+### `iss` (issuer)
+
+`http.request.jwt.claims.iss` `Map<Array<String>>`
+`http.request.jwt.claims.iss.names` `Array<String>`
+`http.request.jwt.claims.iss.values` `Array<String>`
+
+The `iss` (issuer) claim identifies the principal that issued the JWT.
+
+<Render file="jwt-claims" product="api-shield" />
+
+### `jti` (JWT ID)
+
+`http.request.jwt.claims.jti` `Map<Array<String>>`
+`http.request.jwt.claims.jti.names`	`Array<String>`
+`http.request.jwt.claims.jti.values` `Array<String>`
+
+The `jti` (JWT ID) claim provides a unique identifier for the JWT.
+
+<Render file="jwt-claims" product="api-shield" />
+
+### `nbf` (not before)
+
+`http.request.jwt.claims.nbf.sec` `Map<Array<Integer>>`
+`http.request.jwt.claims.nbf.sec.names` `Array<String>`
+`http.request.jwt.claims.nbf.sec.values` `Array<Integer>`
+
+The `nbf` (not before) claim identifies the time before which the JWT must not be accepted for processing.
+
+<Render file="jwt-claims" product="api-shield" />
+
+### `sub` (subject)
+
+`http.request.jwt.claims.sub` `Map<Array<String>>`
+`http.request.jwt.claims.sub.names` `Array<String>`
+`http.request.jwt.claims.sub.values` `Array<String>`
+
+The `sub` (subject) claim identifies the principal that is the subject of the JWT. The claims in a JWT are normally statements about the subject.
+
+<Render file="jwt-claims" product="api-shield" />
