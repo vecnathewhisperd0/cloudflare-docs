@@ -25,7 +25,7 @@ Providing DNS security to the service provider end customers with Cloudflare is 
 
 ![Figure 1: The service provider subscribers send DNS queries to the service provider DNS server, which will forward them to Cloudflare Gateway to apply DNS filtering policies.](~/assets/images/reference-architecture/gateway-dns-for-isp/gateway-dns-for-isp-image-01.svg)
 
-Cloudflare Gateway, like all Cloudflare services, utilizes [Anycast technology](https://www.cloudflare.com/learning/cdn/glossary/anycast-network/), ensuring that all service provider DNS queries are directed to the nearest Cloudflare point of presence.
+Cloudflare Gateway, like all Cloudflare services, utilizes [anycast technology](https://www.cloudflare.com/learning/cdn/glossary/anycast-network/), ensuring that all service provider DNS queries are directed to the nearest Cloudflare point of presence.
 
 To distinguish queries originating from the service provider from those coming from other customers, admins configure a [location](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/agentless/dns/locations/) in their Cloudflare tenant dashboard. When a DNS location is created, Gateway assigns IPv4/IPv6 addresses and DoT/DoH hostnames for that location. These assigned IP addresses and hostnames are then used by the service provider to send DNS queries for resolution. In turn, the service provider configures the location object with the public IP addresses of their on-premises DNS servers, allowing Cloudflare to accurately associate queries with the corresponding location.
 
