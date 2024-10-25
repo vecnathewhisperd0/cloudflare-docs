@@ -233,3 +233,29 @@ entries:
     difficulty: Intermediate
     content_type: 🎥 Video
     pcx_content_type: tutorial
+  - link: https://youtu.be/W45MIi_t_go
+    title: Building Front-End Applications | Now Supported by Cloudflare Workers
+    description: You can now build front-end applications, just like you do on Cloudflare Pages, but with the added benefit of Workers.
+    tags: [Workers, Workers AI]
+    languages: [TypeScript]
+    stream_id: 84039c66f18a34fa70cae7e2a0e70dae
+    products: [Workers, Workers AI]
+    cloudflare: true
+    author: confidence
+    updated: 2024-10-23
+    difficulty: Beginner
+    content_type: 🎥 Video
+    pcx_content_type: tutorial
+  - link: https://youtu.be/HXOpxNaKUzw
+    title: How to Build Event-Driven Applications with Cloudflare Queues
+    description: In this video, we demonstrate how to build an event-driven application using Cloudflare Queues. Event-driven system lets you decouple services, allowing them to process and scale independently.
+    tags: [Workers, Queues]
+    languages: [TypeScript]
+    # stream_id: 
+    products: [Workers, Workers AI]
+    cloudflare: true
+    author: harshil
+    updated: 2024-09-26
+    difficulty: Intermediate
+    content_type: 🎥 Video
+    pcx_content_type: tutorial
