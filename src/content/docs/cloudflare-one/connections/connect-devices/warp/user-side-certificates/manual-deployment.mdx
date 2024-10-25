@@ -413,17 +413,18 @@ export NODE_EXTRA_CA_CERTS='[PATH_TO_CLOUDFLARE_CERT.pem]'
 
 ### Docker
 
-Before you install a certificate to a Docker container, you must add it to the Docker build context:
+To install a certificate for use in a Docker container:
 
 1. [Download a Cloudflare certificate](#download-the-cloudflare-root-certificate) in `.pem` format.
-2. Create a directory for certificates:
+2. Create a directory for certificates in your Docker project:
 
    ```sh
+   cd docker-project
    mkdir certs
    mv /path/to/downloaded/certificate.pem certs/
    ```
 
-3. Verify the certificate is in the right directory. Your project should have the following structure:
+3. Verify the certificate was moved to the directory correctly. Your project should have the following structure:
 
    ```sh
    docker-project/
@@ -432,9 +433,9 @@ Before you install a certificate to a Docker container, you must add it to the D
        └── certificate.pem
    ```
 
-4. Add the certificate to the build process by adding the following to your dockerfile:
+4. Add the certificate to the Docker build process. For example:
 
-   ```docker title="Red Hat/CentOS/Fedora-based images"
+   ```docker title="Red Hat-based images"
    FROM registry.access.redhat.com/ubi9/ubi:latest
    # Or use: FROM centos:7 or FROM fedora:38
 
@@ -446,8 +447,8 @@ Before you install a certificate to a Docker container, you must add it to the D
    RUN update-ca-trust extract
    ```
 
-   ```docker title="Debian/Ubuntu-based images"
-   FROM ubuntu:22.04
+   ```docker title="Debian-based images"
+   FROM debian:12
 
    # Install necessary certificates package
    RUN apt-get update && apt-get install -y ca-certificates
@@ -480,7 +481,7 @@ Before you install a certificate to a Docker container, you must add it to the D
    docker run --rm your-image-name sh -c "cat /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem | grep Cloudflare"
    ```
 
-   ```sh title="Debian/Ubuntu/Alpine-based images"
+   ```sh title="Debian and Alpine-based images"
    docker run --rm your-image-name sh -c "cat /etc/ssl/certs/certificate.pem"
    ```
 
